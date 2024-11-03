@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="/materialized/materialize.css"  media="screen,projection"/>
+    <!--CSS Link-->
+    <link rel="stylesheet" href="styles.css">
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Play with me!</title>
+	</head>
+
+	<body>
+
+		<main class="container">
+
+      <!-- HEADER -->
+			<div 
+				class="header center"
+					><h1>
+						Rock Paper Scissors
+					</h1>
+			</div>
+
+      <!-- EMOJI -->
+      <div class="emoji center" id="emoji">
+				<img id="emojiImg" src="/emoji/prideEmoji.png" alt="pride emoji"> 
+				<div class="speechBubble">
+					<h5 id="speech">Think you can beat me?</h5>
+				</div>
+    </div>
+
+			<section 
+      class="center">
+
+        <h2>Your move:</h2>
+        <div class="center gameContainer">
+				<!-- BTN ROCK -->
+				<button 
+					id="rock" 
+					class="btn-floating gameBtn" 
+					onclick="game('Rock')"
+						><i 
+							class="fa-solid fa-hand-fist"
+						></i>
+				</button>
+
+				<!-- BTN PAPER -->
+				<button 
+					id="paper" 
+					class="btn-floating gameBtn modal-trigger" data-target="modal1"
+					onclick="game('Paper')"
+						><i 
+							class="fa-solid fa-hand"
+						></i>
+				</button>
+
+				<!-- BTN SCISSORS -->
+				<button 
+					id="scissors" 
+					class="btn-floating gameBtn" 
+					onclick="game('Scissors')"
+						><i 
+							class="fa-solid fa-hand-scissors"
+						></i>
+				</button>
+      </div>
+
+		</section>
+
+		<div 
+			class="scoreBoard"
+		></div>
+
+        <!-- BTN RESET -->
+		<div 
+		><button
+					id="reset"
+					class="waves-effect waves-light btn-large resetBTN"
+					onclick="
+					resetBtn()"
+						alert(
+							`Reseted score!`
+						);"
+				>reset score 
+			</button>
+		</div>
+
+    <!-- MODAL -->
+    <div 
+		class="gameModal container hidden" 
+		id="gameModal">
+      <h1
+			id="result" class="result"
+			>Tied!
+      </h1>
+      <div class="gameMoves">
+        <div class="playerMove">
+          <h3>
+            Your move:
+          </h3>
+          <p id="playerMove">
+            Rock
+          </p>
+        </div>
+        <div class="computerMove">
+          <h3>
+            Computer move:
+          </h3>
+          <p id="computerMove">
+            Paper
+          </p>
+        </div>
+      </div>
+      <h3 class="resultCompare" id="resultCompare">
+        Rock beats paper!
+      </h3>
+      <button 
+				class="playAgain waves-effect waves-light btn-large"  
+				onclick="closeModal()"
+				>Play again? 
+      </button>
+    </div>
+    <!-- OVERLAY BLUR -->
+    <div 
+		id="overlay" 
+		class="hidden"
+		></div>
+
+		<!-- SCORE TRACKER -->
+		<div class="scoreTracker hidden" id="scoreTracker">
+			<h3>Keep track of your score!</h3>
+			<p id="scoreWon">score</p>
+			<p id="scoreLost">score</p>
+			<p id="scoreTied">score</p>
+		</div>
+	</main>
+	<!-- SCRIPT -->
+
+	<!-- FONT AWESOME -->
+		<script src="https://kit.fontawesome.com/5e3005e55e.js" crossorigin="anonymous"></script>
+
+		<!-- MATERIALIZED JS -->
+		<script type="text/javascript" src="/materialized/materialize.js"></script>
+    <!-- GAME JS  -->
+		<script src="script.js"></script>
+	</body>
+</html>
+
